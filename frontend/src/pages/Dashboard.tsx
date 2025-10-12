@@ -86,7 +86,7 @@ function  Dashboard() {
     <div>
       <header className="header">
         <div className="header-content">
-          <h1>📋 Task Manager</h1>
+          <h1>Task Manager</h1>
           <nav className="nav">
             <span>Welcome, {user?.name}!</span>
             <button onClick={handleLogout} className="btn btn-secondary btn-sm">
