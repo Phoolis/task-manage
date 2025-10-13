@@ -8,30 +8,25 @@ import { config } from './config/config.js';
 import routes from './routes/index.js';
 import { errorHandler, notFound } from './middleware/errorHandler.js';
 
-// Load environment variables
 dotenv.config();
 
 const app: Application = express();
 
-// Connect to database only if not in test mode
 if (process.env.NODE_ENV !== 'test') {
   connectDB();
 }
 
-// Middleware
-app.use(helmet()); // Security headers
+app.use(helmet()); 
 app.use(cors({
   origin: config.frontendUrl,
   credentials: true
 }));
-app.use(morgan('dev')); // Logging
-app.use(express.json()); // Body parser
+app.use(morgan('dev')); 
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
 app.use('/api', routes);
 
-// Root route
 app.get('/', (_req, res) => {
   res.json({
     message: 'Task Management API',
@@ -48,10 +43,8 @@ app.get('/', (_req, res) => {
 app.use(notFound);
 app.use(errorHandler);
 
-// Start server
 const PORT = config.port;
 
-// Only start listening if not in test environment
 if (process.env.NODE_ENV !== 'test') {
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT} in ${config.nodeEnv} mode`);
