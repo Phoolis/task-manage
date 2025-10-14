@@ -9,8 +9,3 @@ const models = {
 };
 
 export default models;
-
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  module.exports = Object.assign(models, module.exports);
-  module.exports.default = models;
-}
