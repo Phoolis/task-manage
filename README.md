@@ -49,27 +49,12 @@ flowchart LR
       DB[(PostgreSQL)]
    end
 
-   subgraph Dev["Local Dev"]
-      LocalDB[Postgres (Docker)]
-   end
-
    subgraph CI_CD["CI / CD & Registry"]
       GH[GitHub Actions]
       Registry[(Container Registry)]
       Render[Render.com]
    end
-
-   U -->|HTTP(S)| FE
-   FE -->|REST / JSON| BE
-   BE -->|ORM (Sequelize)| DB
-   BE -->|JWT| Auth
-   BE -->|dev connection| LocalDB
-
-   GH -->|run: lint, test, build| BE & FE
-   GH -->|build images / push| Registry
-   Registry -->|deploy images| Render
-   GH -->|deploy on tag/release| Render
-```
+ ``
 
 # Project Tasks
 
