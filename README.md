@@ -253,9 +253,6 @@ Your goal is to implement a CI pipeline for the Task Management System:
    - Configure the pipeline to run backend and frontend tests.
    - Add a linter step to check code quality.
 
-   **HUOM** Coverage testin ajaminen ja tuloksen vieminen artifactina voisi olla kiva lisä. Täytyy ihmetellä tuota.
-
-
 ## Task 3. Security 
 
 1. **Static code analysis & dependencies**
