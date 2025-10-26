@@ -423,26 +423,8 @@ Implement monitoring and health checks for your deployed application:
    - Add email or Slack notifications for deployment failures and service health issues.
 
 ## Deliveries & Submission
-For successful completion of the project, submit the following:
 
-1. **Source Code Repository**
-   - Complete codebase for backend and frontend.
-   - Include all configuration files.
+Teachers will provide a link to the course self‑assessment form. All students must complete that form and submit it by the course deadline.
 
-2. **CI/CD Workflow**
-   - GitHub Actions workflow file(s) implementing CI (testing, linting, security checks) and CD (deployment steps).
+In the self‑assessment there are own assessment for each project task. Ensure access permissions are correct. If any link points to a private resource, grant the teachers access or provide a downloadable alternative link.
 
-3. **Docker Integration**
-   - Dockerfiles for backend and frontend.
-   - Instructions or scripts for building and running containers locally.
-
-4. **Deployment**
-   - Render.com service URLs for backend and frontend.
-   - Description of environment variable setup and deployment process.
-
-5. **Monitoring**
-   - Description of implemented health checks and logging/monitoring approach.
-
-6. **Documentation**
-   - Updated `README.md` with setup, usage, and deployment instructions.
-   - Brief summary of what was implemented, challenges faced, and lessons learned. 
