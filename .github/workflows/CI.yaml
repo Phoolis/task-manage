@@ -1,0 +1,31 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Setup repo, node, and dependencies
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Set up node
+        uses: actions@setup-node@v5
+        with:
+          node-version: 22
+      - name: Install all dependencies
+        run: npm run install:all
+      # Linting and testing
+      - name: Lint backend
+        run: npm run lint:backend
+      - name: Test backend
+        run: npm run test:backend
+      - name: Lint frontend
+        run: npm run lint:frontend
+      - name: Test frontend
+        run: npm run test:frontend
