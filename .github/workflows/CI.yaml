@@ -29,3 +29,6 @@ jobs:
         run: npm run lint:frontend
       - name: Test frontend
         run: npm run test:frontend
+      # Building
+      - name: Build backend
+        run: npm run build:backend
