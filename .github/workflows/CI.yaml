@@ -20,6 +20,8 @@ jobs:
           node-version: 22
       - name: Install all dependencies
         run: npm run install:all
+      - name: Audit npm dependencies
+        run: npm audit --audit-level=moderate
       # Linting and testing
       - name: Lint backend
         run: npm run lint:backend
