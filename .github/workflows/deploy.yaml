@@ -1,7 +1,9 @@
 name: Deploy via DockerHub
 
 on:
-  workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
 
 jobs:
   docker:
@@ -16,7 +18,8 @@ jobs:
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push
+      # Push backend image to DockerHub
+      - name: Build and push backend
         uses: docker/build-push-action@v6
         with:
           context: ./backend
@@ -24,3 +27,12 @@ jobs:
           tags: |
             phoolis/task-manage-backend:${{ github.ref_name }}
             phoolis/task-manage-backend:latest
+      # Push frontend image to DockerHub
+      - name: Build and push frontend
+        uses: docker/build-push-action@v6
+        with:
+          context: ./frontend
+          push: true
+          tags: |
+            phoolis/task-manage-frontend:${{ github.ref_name }}
+            phoolis/task-manage-frontend:latest
