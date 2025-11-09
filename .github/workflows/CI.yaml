@@ -4,8 +4,8 @@ permissions:
 on:
   push:
     branches: [main]
-    paths-ignore: 
-      - '.github/**'
+    paths-ignore:
+      - ".github/**"
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -38,3 +38,5 @@ jobs:
       # Building
       - name: Build backend
         run: npm run build:backend
+      - name: Build frontend
+        run: npm run build:frontend
