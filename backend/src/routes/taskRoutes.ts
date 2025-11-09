@@ -14,9 +14,6 @@ import { validate } from "../middleware/validator.js";
 
 const router = Router();
 
-// All routes require authentication
-router.use(protect);
-
 // Rate limiter: 300 requests per 15 minutes per IP
 router.use(
   rateLimit({
@@ -27,6 +24,9 @@ router.use(
     legacyHeaders: false, // Disable the X-RateLimit headers
   })
 );
+
+// All routes require authentication
+router.use(protect);
 
 router
   .route("/")
